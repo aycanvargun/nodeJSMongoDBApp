@@ -1,0 +1,382 @@
+{
+  "info": {
+    "title": "AYCAN VARGÜN - Node Swagger API",
+    "version": "1.0.0",
+    "description": "Node JS APP with Mongo DB- Swagger Integration"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "swagger": "2.0",
+ 
+ 
+  "responses": { },
+  "parameters": { },
+  "securityDefinitions": { },
+
+  
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/users": {
+      "get": {
+        "tags": [
+          "Get all Users"
+        ],
+        "summary": "Get all users in system",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/UserSchema"
+            }
+          },
+          "404": {
+            "description": "Failed."
+          }
+        }
+      }
+    },
+
+    "/users/{TC}": {
+      "get": {
+        "tags": [
+          "Get a User"
+        ],
+        "summary": "Get a User",
+        "parameters": [
+          {
+            "name": "TC",
+            "in": "path",
+            "required": true,
+            
+            "type": "number"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/UserSchema"
+            }
+          },
+          "404": {
+            "description": "Failed."
+          }
+        }
+      }
+    },
+    "/users/create": {
+      "post": {
+        "tags": [
+          "Create User"
+        ],
+        "summary": "Create User",
+        "parameters": [
+          {
+            "name": "model",
+            "in": "body",
+            "required": true,
+            
+            "schema": {
+              "$ref": "#/definitions/UserSchema"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/UserSchema"
+            }
+          },
+          "404": {
+            "description": "Failed."
+          }
+        }
+      }
+    },
+    "/users/update/{TC}": {
+      "put": {
+        "tags": [
+          "Update User"
+        ],
+        "summary": "Update User",
+        "parameters": [
+          {
+            "name": "TC",
+            "in": "path",
+            "required": true,
+            
+            "type": "number"
+          },
+          {
+            "name": "model",
+            "in": "body",
+            "required": true,
+            
+            "schema": {
+              "$ref": "#/definitions/UserSchema"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/UserSchema"
+            }
+          },
+          "404": {
+            "description": "Failed."
+          }
+        }
+      }
+    },
+
+    "/users/delete/{TC}": {
+      "delete": {
+        "tags": [
+          "Delete User"
+        ],
+        "summary": "Delete User",
+        "parameters": [
+          {
+            "name": "TC",
+            "in": "path",
+            "required": true,
+            
+            "type": "number"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+            
+          },   
+           "404": {
+            "description": "Failed."
+          }
+        }
+      }
+    },
+
+  
+    "/accounts": {
+      "get": {
+        "tags": [
+          "Get all Accounts"
+        ],
+        "summary": "Get all accounts in system",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AccountSchema"
+            }
+          },
+          "404": {
+            "description": "Failed."
+          }
+        }
+      }
+    },
+    "/accounts/{TC}": {
+      "get": {
+        "tags": [
+          "Get an Account"
+        ],
+        "summary": "Get an Account",
+        "parameters": [
+          {
+            "name": "TC",
+            "in": "path",
+            "required": true,
+            
+            "type": "number"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AccountSchema"
+            }
+          },
+          "404": {
+            "description": "Failed."
+          }
+        }
+      }
+    },
+    "/accounts/create": {
+      "post": {
+        "tags": [
+          "Create account"
+        ],
+        "summary": "Create account",
+        "parameters": [
+          {
+            "name": "model",
+            "in": "body",
+            "required": true,
+            
+            "schema": {
+              "$ref": "#/definitions/AccountSchema"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AccountSchema"
+            }
+          },
+          "404": {
+            "description": "Failed."
+          }
+        }
+      }
+    },
+    "/accounts/update/{id}": {
+      "put": {
+        "tags": [
+          "Update account"
+        ],
+        "summary": "Update Account",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+  
+            "type": "string"
+          },
+          {
+            "name": "model",
+            "in": "body",
+            "required": true,
+            
+            "schema": {
+              "$ref": "#/definitions/AccountSchema"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/AccountSchema"
+            }
+          },
+          "404": {
+            "description": "Failed."
+          }
+        }
+      }
+    },
+    "/accounts/delete/{id}": {
+      "delete": {
+        "tags": [
+          "delete account"
+        ],
+        "summary": "delete account",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+           
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+             
+          },   
+           "404": {
+            "description": "Failed."
+          }
+        }
+      }
+    },
+    "/transfer/{sourceAccountId}/{destAccounId}": {
+      "put": {
+        "tags": [
+          "transfer balance"
+        ],
+        "summary": "By using this API, you can transfer balance between accounts.",
+        "parameters": [
+          {
+            "name": "sourceAccountId",
+            "in": "path",
+            "required": true,
+           
+            "type": "string"
+          },
+          {
+            "name": "destAccounId",
+            "in": "path",
+            "required": true,
+           
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+             
+          },   
+           "404": {
+            "description": "Failed."
+          }
+        }
+      }
+    }
+
+
+  },
+  "definitions": {
+    "UserSchema": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "surname": {
+          "type": "string"
+        },
+        "TC": {
+          "type": "number"
+        },
+        "mail": {
+          "type": "string"
+        }
+         
+       
+      }
+    },
+    "AccountSchema": {
+      "type": "object",
+      "properties": {
+        "TC": {
+          "type": "number"
+        },
+        "balance": {
+          "type": "number"
+        },
+        
+        "currency": {
+          "type": "string"
+        }
+         
+       
+      }
+    }
+  }
+}
